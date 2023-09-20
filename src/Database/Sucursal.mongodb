@@ -1,0 +1,52 @@
+db.sucursal.insertMany([
+  {
+    Nombre: "Sucursal U",
+    Direccion: "Avenida 123, Ciudad U",
+    Contacto: "Ava Johnson",
+  },
+  {
+    Nombre: "Sucursal V",
+    Direccion: "Calle 456, Ciudad V",
+    Contacto: "Liam Martin",
+  },
+  {
+    Nombre: "Sucursal W",
+    Direccion: "Avenida 789, Ciudad W",
+    Contacto: "Isabella Baker",
+  },
+  {
+    Nombre: "Sucursal X",
+    Direccion: "Calle 567, Ciudad X",
+    Contacto: "Noah Hill",
+  },
+  {
+    Nombre: "Sucursal Y",
+    Direccion: "Avenida 234, Ciudad Y",
+    Contacto: "Emma Nelson",
+  },
+  {
+    Nombre: "Sucursal Z",
+    Direccion: "Calle 890, Ciudad Z",
+    Contacto: "William Murphy",
+  },
+  {
+    Nombre: "Sucursal AA",
+    Direccion: "Avenida 123, Ciudad AA",
+    Contacto: "Mia Turner",
+  },
+  {
+    Nombre: "Sucursal BB",
+    Direccion: "Calle 456, Ciudad BB",
+    Contacto: "James Allen",
+  },
+  {
+    Nombre: "Sucursal CC",
+    Direccion: "Avenida 789, Ciudad CC",
+    Contacto: "Charlotte Davis",
+  },
+  {
+    Nombre: "Sucursal DD",
+    Direccion: "Calle 567, Ciudad DD",
+    Contacto: "Benjamin Young",
+  },
+]);
