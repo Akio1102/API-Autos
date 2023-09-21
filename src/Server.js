@@ -1,6 +1,6 @@
 import express from "express";
 import { ENVPORT, Global } from "./Config/config.js";
-import Personas from "./Routes/Personas.routes.js";
+import ROUTES from "./Routes/Routes.js";
 
 export default class {
   constructor() {
@@ -11,7 +11,7 @@ export default class {
   }
 
   async routes() {
-    this.app.use("/api", Personas);
+    this.app.use("/api", ROUTES);
   }
 
   startServer() {

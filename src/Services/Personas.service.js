@@ -20,3 +20,24 @@ export const getAllClientes = async () => {
     throw new Error(`Error en el Servidor: ${error.message}`);
   }
 };
+
+export const getAllVendedor = async () => {
+  try {
+    const Vendedor = await ConectDB("persona");
+    const AllVendedor = await Vendedor.find({
+      Distintivo: "vendedor",
+    }).toArray();
+
+    return AllVendedor.length > 0
+      ? {
+          msg: "Vendedores Encontrados",
+          data: AllVendedor,
+        }
+      : {
+          msg: "No hay Clientes",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};

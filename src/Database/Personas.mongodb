@@ -91,4 +91,8 @@ db.persona.insertMany([
   },
 ]);
 
+/* 1. Mostrar todos los clientes registrados en la base de datos. */
 db.persona.find({ Distintivo: "cliente" });
+
+/* 6. Listar los empleados con el cargo de "Vendedor". */
+db.persona.find({ Distintivo: "vendedor" });

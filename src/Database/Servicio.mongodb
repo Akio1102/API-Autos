@@ -180,3 +180,49 @@ db.servicio.insertMany([
     Pago_Total: 90,
   },
 ]);
+
+/* 5. Obtener los detalles del alquiler con el ID de alquiler específico.*/
+db.servicio.find({
+  _id: ObjectId("650bc01246d1854c4f233043"),
+  Tipo_Servicio: "Alquiler",
+});
+
+/* 4. Mostrar todas las reservas pendientes con los datos del cliente y el automóvil reservado.*/
+db.servicio.aggregate([
+  {
+    $match: {
+      Tipo_Servicio: "Reserva",
+      Estado: "Pendiente",
+    },
+  },
+  {
+    $lookup: {
+      from: "persona",
+      localField: "IdCliente",
+      foreignField: "_id",
+      as: "Cliente",
+    },
+  },
+  {
+    $lookup: {
+      from: "automovil",
+      localField: "IdAutomovil",
+      foreignField: "_id",
+      as: "Automovil",
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+      IdAutomovil: 0,
+      IdCliente: 0,
+      "Cliente._id": 0,
+      "Cliente.Direccion": 0,
+      "Cliente.Email": 0,
+      "Cliente.Password": 0,
+      "Cliente.Distintivo": 0,
+      "Automovil._id": 0,
+      "Automovil.Stock": 0,
+    },
+  },
+]);
