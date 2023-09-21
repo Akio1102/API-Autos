@@ -1,0 +1,231 @@
+db.automovil.insertMany([
+  {
+    Marca: "Toyota",
+    Modelo: "Camry",
+    Year: new Date("2022-01-01"),
+    Tipo: "Sedán",
+    Capacidad: "5 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d5f"),
+      Cantidad: 10,
+    },
+  },
+  {
+    Marca: "Honda",
+    Modelo: "Civic",
+    Year: new Date("2021-01-01"),
+    Tipo: "Sedán",
+    Capacidad: "5 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d5f"),
+      Cantidad: 8,
+    },
+  },
+  {
+    Marca: "Ford",
+    Modelo: "F-150",
+    Year: new Date("2023-01-01"),
+    Tipo: "Camioneta",
+    Capacidad: "5 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d5f"),
+      Cantidad: 12,
+    },
+  },
+
+  {
+    Marca: "Chevrolet",
+    Modelo: "Malibu",
+    Year: new Date("2021-01-01"),
+    Tipo: "Sedán",
+    Capacidad: "5 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d5b"),
+      Cantidad: 6,
+    },
+  },
+  {
+    Marca: "Nissan",
+    Modelo: "Rogue",
+    Year: new Date("2023-07-05"),
+    Tipo: "SUV",
+    Capacidad: "5 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d5b"),
+      Cantidad: 9,
+    },
+  },
+
+  {
+    Marca: "Mazda",
+    Modelo: "CX-5",
+    Year: new Date("2023-01-01"),
+    Tipo: "SUV",
+    Capacidad: "5 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d58"),
+      Cantidad: 11,
+    },
+  },
+
+  {
+    Marca: "Kia",
+    Modelo: "Sportage",
+    Year: new Date("2022-01-01"),
+    Tipo: "SUV",
+    Capacidad: "5 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d60"),
+      Cantidad: 7,
+    },
+  },
+  {
+    Marca: "Hyundai",
+    Modelo: "Elantra",
+    Year: new Date("2023-01-01"),
+    Tipo: "Sedán",
+    Capacidad: "5 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d60"),
+      Cantidad: 10,
+    },
+  },
+
+  {
+    Marca: "Volkswagen",
+    Modelo: "Jetta",
+    Year: new Date("2022-01-01"),
+    Tipo: "Sedán",
+    Capacidad: "5 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d5a"),
+      Cantidad: 8,
+    },
+  },
+
+  {
+    Marca: "Subaru",
+    Modelo: "Outback",
+    Year: new Date("2021-01-01"),
+    Tipo: "SUV",
+    Capacidad: "5 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d5e"),
+      Cantidad: 9,
+    },
+  },
+  {
+    Marca: "Audi",
+    Modelo: "A4",
+    Year: new Date("2023-01-01"),
+    Tipo: "Sedán",
+    Capacidad: "5 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d5e"),
+      Cantidad: 12,
+    },
+  },
+  {
+    Marca: "Mercedes-Benz",
+    Modelo: "C-Class",
+    Year: new Date("2022-01-01"),
+    Tipo: "Sedán",
+    Capacidad: "5 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d5e"),
+      Cantidad: 6,
+    },
+  },
+
+  {
+    Marca: "BMW",
+    Modelo: "X5",
+    Year: new Date("2023-01-01"),
+    Tipo: "SUV",
+    Capacidad: "5 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d5d"),
+      Cantidad: 9,
+    },
+  },
+
+  {
+    Marca: "Lexus",
+    Modelo: "RX",
+    Year: new Date("2022-01-01"),
+    Tipo: "SUV",
+    Capacidad: "5 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d57"),
+      Cantidad: 11,
+    },
+  },
+  {
+    Marca: "Jeep",
+    Modelo: "Wrangler",
+    Year: new Date("2023-01-01"),
+    Tipo: "SUV",
+    Capacidad: "5 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d57"),
+      Cantidad: 7,
+    },
+  },
+  {
+    Marca: "Ram",
+    Modelo: "1500",
+    Year: new Date("2022-01-01"),
+    Tipo: "Camioneta",
+    Capacidad: "5 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d57"),
+      Cantidad: 10,
+    },
+  },
+
+  {
+    Marca: "GMC",
+    Modelo: "Sierra",
+    Year: new Date("2021-01-01"),
+    Tipo: "Camioneta",
+    Capacidad: "5 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d5c"),
+      Cantidad: 8,
+    },
+  },
+
+  {
+    Marca: "Ferrari",
+    Modelo: "488 GTB",
+    Year: new Date("2023-01-01"),
+    Tipo: "Deportivo",
+    Capacidad: "2 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d59"),
+      Cantidad: 2,
+    },
+  },
+  {
+    Marca: "Porsche",
+    Modelo: "911",
+    Year: new Date("2022-01-01"),
+    Tipo: "Deportivo",
+    Capacidad: "2 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d59"),
+      Cantidad: 3,
+    },
+  },
+  {
+    Marca: "Chevrolet",
+    Modelo: "Camaro",
+    Year: new Date("2022-01-01T00:00:00Z"),
+    Tipo: "Deportivo",
+    Capacidad: "2 pasajeros",
+    Stock: {
+      Sucursal: ObjectId("650aeea339e2b4119b1c2d59"),
+      Cantidad: 20,
+    },
+  },
+]);
