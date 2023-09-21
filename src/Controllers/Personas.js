@@ -21,3 +21,13 @@ export const GetAllVendedores = async (req, res) => {
     sendErrorResponse(res, error);
   }
 };
+
+export const GetAllClientesDNI = async (req, res) => {
+  try {
+    const { dni } = req.params;
+    const allClientes = await PersonasService.getAllClientesDNI(dni);
+    sendSuccessResponse(res, allClientes);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};

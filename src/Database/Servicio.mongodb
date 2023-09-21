@@ -3,9 +3,9 @@ db.servicio.insertMany([
     IdCliente: ObjectId("650aeea97d72ebc7b8b85343"),
     IdAutomovil: ObjectId("650bb4408501100a30f86277"),
     Tipo_Servicio: "Alquiler",
-    Fecha_Inicio: new Date("2023-07-07"),
-    Fecha_Final: new Date("2023-07-08"),
-    Estado: "Completado",
+    Fecha_Inicio: new Date("2023-10-07"),
+    Fecha_Final: new Date("2023-10-08"),
+    Estado: "Disponible",
     Pago_Total: 300,
   },
   {
@@ -14,7 +14,7 @@ db.servicio.insertMany([
     Tipo_Servicio: "Alquiler",
     Fecha_Inicio: new Date("2023-09-05"),
     Fecha_Final: new Date("2023-09-07"),
-    Estado: "Completado",
+    Estado: "Disponible",
     Pago_Total: 500,
   },
   {
@@ -68,7 +68,7 @@ db.servicio.insertMany([
     Tipo_Servicio: "Alquiler",
     Fecha_Inicio: new Date("2023-07-06"),
     Fecha_Final: new Date("2023-07-08"),
-    Estado: "Pendiente",
+    Estado: "Activos",
     Pago_Total: 600,
   },
   {
@@ -95,7 +95,7 @@ db.servicio.insertMany([
     Tipo_Servicio: "Alquiler",
     Fecha_Inicio: new Date("2023-07-05"),
     Fecha_Final: new Date("2023-07-06"),
-    Estado: "Pendiente",
+    Estado: "Activos",
     Pago_Total: 750,
   },
   {
@@ -131,7 +131,7 @@ db.servicio.insertMany([
     Tipo_Servicio: "Alquiler",
     Fecha_Inicio: new Date("2023-09-09"),
     Fecha_Final: new Date("2023-09-11"),
-    Estado: "Completado",
+    Estado: "Activo",
     Pago_Total: 600,
   },
   {
@@ -158,7 +158,7 @@ db.servicio.insertMany([
     Tipo_Servicio: "Alquiler",
     Fecha_Inicio: new Date("2023-09-19"),
     Fecha_Final: new Date("2023-09-20"),
-    Estado: "Pendiente",
+    Estado: "Disponible",
     Pago_Total: 280,
   },
   {
@@ -181,9 +181,43 @@ db.servicio.insertMany([
   },
 ]);
 
+/* 2. Obtener todos los automóviles disponibles para alquiler.*/
+db.servicio.find({ Tipo_Servicio: "Alquiler", Estado: "Disponible" });
+
+/* 3. Listar todos los alquileres activos junto con los datos de los clientes relacionados. */
+db.servicio.aggregate([
+  {
+    $match: {
+      Tipo_Servicio: "Alquiler",
+      Estado: "Activos",
+    },
+  },
+  {
+    $lookup: {
+      from: "persona",
+      localField: "IdCliente",
+      foreignField: "_id",
+      as: "Cliente",
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+      IdCliente: 0,
+      "Cliente._id": 0,
+      "Cliente.Direccion": 0,
+      "Cliente.Email": 0,
+      "Cliente.Password": 0,
+      "Cliente.Distintivo": 0,
+      "Automovil._id": 0,
+      "Automovil.Stock": 0,
+    },
+  },
+]);
+
 /* 5. Obtener los detalles del alquiler con el ID de alquiler específico.*/
 db.servicio.find({
-  _id: ObjectId("650bc01246d1854c4f233043"),
+  _id: ObjectId("650c82097d4d49dbe26d6387"),
   Tipo_Servicio: "Alquiler",
 });
 
@@ -226,3 +260,16 @@ db.servicio.aggregate([
     },
   },
 ]);
+
+/* 8. Obtener el costo total de un alquiler específico.*/
+db.servicio.find({
+  _id: ObjectId("650c82097d4d49dbe26d6387"),
+  Tipo_Servicio: "Alquiler",
+});
+
+/* 12. Listar las reservas pendientes realizadas por un cliente específico.*/
+db.servicio.find({
+  IdCliente: ObjectId("650aeea97d72ebc7b8b85346"),
+  Tipo_Servicio: "Reserva",
+  Estado: "Pendiente",
+});

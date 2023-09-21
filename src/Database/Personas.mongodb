@@ -96,3 +96,20 @@ db.persona.find({ Distintivo: "cliente" });
 
 /* 6. Listar los empleados con el cargo de "Vendedor". */
 db.persona.find({ Distintivo: "vendedor" });
+
+/* 9. Listar los clientes con el DNI específico. */
+db.persona.aggregate([
+  {
+    $match: {
+      DNI: "12345678K",
+      Distintivo: "cliente",
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+      Email: 0,
+      Password: 0,
+    },
+  },
+]);
