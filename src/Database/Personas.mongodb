@@ -90,3 +90,5 @@ db.persona.insertMany([
     Distintivo: "vendedor",
   },
 ]);
+
+db.persona.find({ Distintivo: "cliente" });
