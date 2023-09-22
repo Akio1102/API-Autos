@@ -50,3 +50,41 @@ export const Login = async (req, res) => {
     sendErrorResponse(res, error);
   }
 };
+
+export const GetAllPersonas = async (req, res) => {
+  try {
+    const AllPersonas = await PersonasService.getAllPersonas();
+    sendSuccessResponse(res, AllPersonas);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};
+
+export const CreateOnePersona = async (req, res) => {
+  try {
+    const {
+      Nombre,
+      DNI,
+      Direccion,
+      Telefono,
+      Email,
+      Password,
+      Distintivo = "cliente",
+    } = req.body;
+
+    const userData = {
+      Nombre,
+      DNI,
+      Direccion,
+      Telefono,
+      Email,
+      Password,
+      Distintivo,
+    };
+
+    const user = await PersonasService.createOnePersona(userData);
+    sendSuccessResponse(res, user);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};

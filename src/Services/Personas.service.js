@@ -1,4 +1,5 @@
 import ConectDB from "../Database/connection.js";
+import { encryptPassword, comparePasswords } from "../Helpers/Hash.js";
 import { createToken } from "../Helpers/Token.js";
 
 export const getAllClientes = async () => {
@@ -122,5 +123,93 @@ export const login = async (user) => {
     }
   } catch (error) {
     throw new Error(`Error al iniciar sesión: ${error.message}`);
+  }
+};
+
+export const getAllPersonas = async () => {
+  try {
+    const Personas = await ConectDB("persona");
+    const AllPersonas = await Personas.find().toArray();
+
+    return AllPersonas.length > 0
+      ? {
+          msg: "Personas Encontradas",
+          data: AllPersonas,
+        }
+      : {
+          msg: "No hay Personas",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const createOnePersona = async (Person) => {
+  try {
+    const { Email, Password } = Person;
+
+    const Personas = await ConectDB("persona");
+
+    const existingUser = await Personas.find({ Email, Password }).toArray();
+    if (existingUser) {
+      return {
+        msg: "Persona ya Existe",
+        status: 409,
+      };
+    }
+
+    const hashedPassword = encryptPassword(Password);
+    Person.Password = hashedPassword;
+
+    const NewPersona = await Personas.insertOne({ Person });
+
+    return NewPersona.acknowledged
+      ? {
+          msg: "Personas Creada Exitosamente",
+          data: NewPersona,
+        }
+      : {
+          msg: "No se puedo Crear",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const updatedOnePersona = async (Person) => {
+  try {
+    const { Email, Password } = Person;
+
+    const Personas = await ConectDB("persona");
+
+    const existingUser = await Personas.updateOne({
+      Email,
+      Password,
+    }).toArray();
+    if (existingUser) {
+      return {
+        msg: "Persona ya Existe",
+        status: 409,
+      };
+    }
+
+    const hashedPassword = encryptPassword(Password);
+    Person.Password = hashedPassword;
+
+    const UpdatePersona = await Personas.insertOne({ Person });
+
+    return UpdatePersona.acknowledged
+      ? {
+          msg: "Personas Actualizada Exitosamente",
+          data: UpdatePersona,
+        }
+      : {
+          msg: "No existe esa Persona",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
   }
 };

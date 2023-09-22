@@ -122,3 +122,10 @@ db.persona.find(
 
 // 19. Login de usuario mediante JWT.
 db.persona.find({ Email: "andres@example.com", Password: "mipassword123" });
+
+db.persona.insertOne({ test: "hi" });
+
+db.persona.updateOne(
+  { _id: ObjectId("650ddcac9ad06328a3324dfc") },
+  { $set: { test: "Pruebaa" } }
+);
