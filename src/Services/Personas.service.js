@@ -74,3 +74,25 @@ export const getAllClientesDNI = async (DNI) => {
     throw new Error(`Error en el Servidor: ${error.message}`);
   }
 };
+
+export const getAllGerenteAsistente = async () => {
+  try {
+    const Vendedor = await ConectDB("persona");
+    const AllVendedor = await Vendedor.aggregate([
+      { $match: { Distintivo: { $in: ["gerente", "asistente"] } } },
+      { $project: { _id: 0, Email: 0, Password: 0 } },
+    ]).toArray();
+
+    return AllVendedor.length > 0
+      ? {
+          msg: "Empleados con el cargo de Gerente o Asistente Encontrados",
+          data: AllVendedor,
+        }
+      : {
+          msg: "No hay Empleados con el cargo de Gerente o Asistente",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};

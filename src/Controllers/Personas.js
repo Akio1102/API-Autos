@@ -31,3 +31,12 @@ export const GetAllClientesDNI = async (req, res) => {
     sendErrorResponse(res, error);
   }
 };
+
+export const GetAllGerenteAsistente = async (req, res) => {
+  try {
+    const allGerenteAsistente = await PersonasService.getAllGerenteAsistente();
+    sendSuccessResponse(res, allGerenteAsistente);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};

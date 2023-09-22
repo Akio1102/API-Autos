@@ -175,6 +175,29 @@ export const getOneAlquilerCosto = async (id) => {
   }
 };
 
+export const getAllAlquilerFecha = async (date = "2023-07-05") => {
+  try {
+    const Servicio = await ConectDB("servicio");
+
+    const AlquileresFecha = await Servicio.find({
+      Tipo_Servicio: "Alquiler",
+      Fecha_Inicio: new Date(date),
+    }).toArray();
+
+    return AlquileresFecha.length > 0
+      ? {
+          msg: `Alquileres con la fecha ${date} Encontrados`,
+          data: AlquileresFecha,
+        }
+      : {
+          msg: `No hay Alquileres con la fecha ${date}`,
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
 export const getAllIdReservasPendientes = async (id) => {
   try {
     const Servicio = await ConectDB("servicio");
@@ -192,6 +215,55 @@ export const getAllIdReservasPendientes = async (id) => {
         }
       : {
           msg: `No hay Reservas Pendientes del Cliente con el ID ${id}`,
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const getAllAlquileres = async () => {
+  try {
+    const Servicio = await ConectDB("servicio");
+
+    const Alquileres = await Servicio.find({
+      Tipo_Servicio: "Alquiler",
+    }).toArray();
+
+    return Alquileres.length > 0
+      ? {
+          msg: "Alquileres Encontrados",
+          cantidadTotal: Alquileres.length,
+          data: Alquileres,
+        }
+      : {
+          msg: "No hay Alquileres registrados en la Base de Datos",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const getAllAlquilerFechas = async (date = "2023-07-05") => {
+  try {
+    const Servicio = await ConectDB("servicio");
+
+    const AlquileresFecha = await Servicio.find({
+      Tipo_Servicio: "Alquiler",
+      Fecha_Inicio: {
+        $gte: new Date(date),
+        $lte: new Date("2023-07-10"),
+      },
+    }).toArray();
+
+    return AlquileresFecha.length > 0
+      ? {
+          msg: `Alquileres con la fecha ${date} Encontrados`,
+          data: AlquileresFecha,
+        }
+      : {
+          msg: `No hay Alquileres con la fecha ${date}`,
           status: 404,
         };
   } catch (error) {

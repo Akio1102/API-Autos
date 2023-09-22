@@ -5,4 +5,5 @@ const ROUTER = Router();
 
 export default ROUTER.get("/Clientes", PersonasController.GetAllClientes)
   .get("/Vendedores", PersonasController.GetAllVendedores)
-  .get("/Clientes/:dni", PersonasController.GetAllClientesDNI);
+  .get("/Clientes/:dni", PersonasController.GetAllClientesDNI)
+  .get("/Gerente-Asistente", PersonasController.GetAllGerenteAsistente);

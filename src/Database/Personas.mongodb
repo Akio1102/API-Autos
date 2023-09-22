@@ -87,7 +87,7 @@ db.persona.insertMany([
     Telefono: "+0123456789",
     Email: "isabel@example.com",
     Password: "claveprivada1",
-    Distintivo: "vendedor",
+    Distintivo: "asistente",
   },
 ]);
 
@@ -113,3 +113,9 @@ db.persona.aggregate([
     },
   },
 ]);
+
+// 13. Mostrar los empleados con el cargo de "Gerente" o "Asistente".
+db.persona.find(
+  { Distintivo: { $in: ["gerente", "asistente"] } },
+  { _id: 0, Email: 0, Password: 0 }
+);

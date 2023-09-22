@@ -4,7 +4,7 @@ db.automovil.insertMany([
     Modelo: "Camry",
     Year: new Date("2022-01-01"),
     Tipo: "Sedán",
-    Capacidad: "5 pasajeros",
+    Capacidad: 6,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d5f"),
       Cantidad: 10,
@@ -15,7 +15,7 @@ db.automovil.insertMany([
     Modelo: "Civic",
     Year: new Date("2021-01-01"),
     Tipo: "Sedán",
-    Capacidad: "5 pasajeros",
+    Capacidad: 6,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d5f"),
       Cantidad: 8,
@@ -26,7 +26,7 @@ db.automovil.insertMany([
     Modelo: "F-150",
     Year: new Date("2023-01-01"),
     Tipo: "Camioneta",
-    Capacidad: "5 pasajeros",
+    Capacidad: 5,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d5f"),
       Cantidad: 12,
@@ -38,7 +38,7 @@ db.automovil.insertMany([
     Modelo: "Malibu",
     Year: new Date("2021-01-01"),
     Tipo: "Sedán",
-    Capacidad: "5 pasajeros",
+    Capacidad: 5,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d5b"),
       Cantidad: 6,
@@ -49,7 +49,7 @@ db.automovil.insertMany([
     Modelo: "Rogue",
     Year: new Date("2023-07-05"),
     Tipo: "SUV",
-    Capacidad: "5 pasajeros",
+    Capacidad: 5,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d5b"),
       Cantidad: 9,
@@ -61,7 +61,7 @@ db.automovil.insertMany([
     Modelo: "CX-5",
     Year: new Date("2023-01-01"),
     Tipo: "SUV",
-    Capacidad: "5 pasajeros",
+    Capacidad: 5,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d58"),
       Cantidad: 11,
@@ -73,7 +73,7 @@ db.automovil.insertMany([
     Modelo: "Sportage",
     Year: new Date("2022-01-01"),
     Tipo: "SUV",
-    Capacidad: "5 pasajeros",
+    Capacidad: 5,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d60"),
       Cantidad: 7,
@@ -84,7 +84,7 @@ db.automovil.insertMany([
     Modelo: "Elantra",
     Year: new Date("2023-01-01"),
     Tipo: "Sedán",
-    Capacidad: "5 pasajeros",
+    Capacidad: 5,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d60"),
       Cantidad: 10,
@@ -96,7 +96,7 @@ db.automovil.insertMany([
     Modelo: "Jetta",
     Year: new Date("2022-01-01"),
     Tipo: "Sedán",
-    Capacidad: "5 pasajeros",
+    Capacidad: 5,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d5a"),
       Cantidad: 8,
@@ -108,7 +108,7 @@ db.automovil.insertMany([
     Modelo: "Outback",
     Year: new Date("2021-01-01"),
     Tipo: "SUV",
-    Capacidad: "5 pasajeros",
+    Capacidad: 5,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d5e"),
       Cantidad: 9,
@@ -119,7 +119,7 @@ db.automovil.insertMany([
     Modelo: "A4",
     Year: new Date("2023-01-01"),
     Tipo: "Sedán",
-    Capacidad: "5 pasajeros",
+    Capacidad: 5,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d5e"),
       Cantidad: 12,
@@ -130,7 +130,7 @@ db.automovil.insertMany([
     Modelo: "C-Class",
     Year: new Date("2022-01-01"),
     Tipo: "Sedán",
-    Capacidad: "5 pasajeros",
+    Capacidad: 5,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d5e"),
       Cantidad: 6,
@@ -142,7 +142,7 @@ db.automovil.insertMany([
     Modelo: "X5",
     Year: new Date("2023-01-01"),
     Tipo: "SUV",
-    Capacidad: "5 pasajeros",
+    Capacidad: 5,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d5d"),
       Cantidad: 9,
@@ -154,7 +154,7 @@ db.automovil.insertMany([
     Modelo: "RX",
     Year: new Date("2022-01-01"),
     Tipo: "SUV",
-    Capacidad: "5 pasajeros",
+    Capacidad: 5,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d57"),
       Cantidad: 11,
@@ -165,7 +165,7 @@ db.automovil.insertMany([
     Modelo: "Wrangler",
     Year: new Date("2023-01-01"),
     Tipo: "SUV",
-    Capacidad: "5 pasajeros",
+    Capacidad: 5,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d57"),
       Cantidad: 7,
@@ -176,7 +176,7 @@ db.automovil.insertMany([
     Modelo: "1500",
     Year: new Date("2022-01-01"),
     Tipo: "Camioneta",
-    Capacidad: "5 pasajeros",
+    Capacidad: 5,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d57"),
       Cantidad: 10,
@@ -188,7 +188,7 @@ db.automovil.insertMany([
     Modelo: "Sierra",
     Year: new Date("2021-01-01"),
     Tipo: "Camioneta",
-    Capacidad: "5 pasajeros",
+    Capacidad: 5,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d5c"),
       Cantidad: 8,
@@ -200,7 +200,7 @@ db.automovil.insertMany([
     Modelo: "488 GTB",
     Year: new Date("2023-01-01"),
     Tipo: "Deportivo",
-    Capacidad: "2 pasajeros",
+    Capacidad: 2,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d59"),
       Cantidad: 2,
@@ -211,7 +211,7 @@ db.automovil.insertMany([
     Modelo: "911",
     Year: new Date("2022-01-01"),
     Tipo: "Deportivo",
-    Capacidad: "2 pasajeros",
+    Capacidad: 2,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d59"),
       Cantidad: 3,
@@ -222,10 +222,22 @@ db.automovil.insertMany([
     Modelo: "Camaro",
     Year: new Date("2022-01-01T00:00:00Z"),
     Tipo: "Deportivo",
-    Capacidad: "2 pasajeros",
+    Capacidad: 2,
     Stock: {
       Sucursal: ObjectId("650aeea339e2b4119b1c2d59"),
       Cantidad: 20,
     },
   },
 ]);
+
+// 10. Mostrar todos los automóviles con una capacidad mayor a 5 personas.
+db.automovil.find({ Capacidad: { $gt: 5 } });
+
+// 15. Listar todos los automóviles ordenados por marca y modelo.
+db.automovil.find().sort({ Marca: 1, Modelo: 1 });
+
+// 18. Mostrar los automóviles con capacidad igual a 5 personas y que estén disponibles.
+db.automovil.find({
+  Capacidad: 5,
+  "Stock.Cantidad": { $gt: 0 },
+});

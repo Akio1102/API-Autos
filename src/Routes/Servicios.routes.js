@@ -11,7 +11,10 @@ export default ROUTER.get(
   .get("/Alquiler/:id", ServiciosController.GetOneIdAlquiler)
   .get("/Reservas-Pendientes", ServiciosController.GetAllReservasPendientes)
   .get("/Alquiler-Costo/:id", ServiciosController.GetOneIdAlquilerCosto)
+  .get("/Alquiler-Fecha/:date", ServiciosController.GetAllAlquilerFecha)
   .get(
     "/Reservas-Pendientes/:id",
     ServiciosController.GetAllIdReservasPendientes
-  );
+  )
+  .get("/Alquileres", ServiciosController.GetAllAlquileres)
+  .get("/Alquiler-Fechas", ServiciosController.GetAllAlquilerFechas);

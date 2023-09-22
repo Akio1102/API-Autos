@@ -267,9 +267,25 @@ db.servicio.find({
   Tipo_Servicio: "Alquiler",
 });
 
+// 11. Obtener los detalles del alquiler que tiene fecha de inicio en '2023-07-05'.
+db.servicio.find({
+  Tipo_Servicio: "Alquiler",
+  Fecha_Inicio: new Date("2023-07-05"),
+});
+
+db.servicio.find();
 /* 12. Listar las reservas pendientes realizadas por un cliente específico.*/
 db.servicio.find({
   IdCliente: ObjectId("650aeea97d72ebc7b8b85346"),
   Tipo_Servicio: "Reserva",
   Estado: "Pendiente",
+});
+
+// 17. Obtener la cantidad total de alquileres registrados en la base de datos.
+db.servicio.find({ Tipo_Servicio: "Alquiler" }).count();
+
+// 20. Listar los alquileres con fecha de inicio entre '2023-07-05' y '2023-07-10'.
+db.servicio.find({
+  Tipo_Servicio: "Alquiler",
+  Fecha_Inicio: { $gte: new Date("2023-07-05"), $lte: new Date("2023-07-10") },
 });
