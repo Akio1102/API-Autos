@@ -6,7 +6,7 @@ db.automovil.insertMany([
     Tipo: "Sedán",
     Capacidad: 6,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d5f"),
+      Sucursal: "Sucursal CC",
       Cantidad: 10,
     },
   },
@@ -17,7 +17,7 @@ db.automovil.insertMany([
     Tipo: "Sedán",
     Capacidad: 6,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d5f"),
+      Sucursal: "Sucursal CC",
       Cantidad: 8,
     },
   },
@@ -28,7 +28,7 @@ db.automovil.insertMany([
     Tipo: "Camioneta",
     Capacidad: 5,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d5f"),
+      Sucursal: "Sucursal CC",
       Cantidad: 12,
     },
   },
@@ -40,7 +40,7 @@ db.automovil.insertMany([
     Tipo: "Sedán",
     Capacidad: 5,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d5b"),
+      Sucursal: "Sucursal Y",
       Cantidad: 6,
     },
   },
@@ -51,7 +51,7 @@ db.automovil.insertMany([
     Tipo: "SUV",
     Capacidad: 5,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d5b"),
+      Sucursal: "Sucursal Y",
       Cantidad: 9,
     },
   },
@@ -63,7 +63,7 @@ db.automovil.insertMany([
     Tipo: "SUV",
     Capacidad: 5,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d58"),
+      Sucursal: "Sucursal V",
       Cantidad: 11,
     },
   },
@@ -75,7 +75,7 @@ db.automovil.insertMany([
     Tipo: "SUV",
     Capacidad: 5,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d60"),
+      Sucursal: "Sucursal DD",
       Cantidad: 7,
     },
   },
@@ -86,7 +86,7 @@ db.automovil.insertMany([
     Tipo: "Sedán",
     Capacidad: 5,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d60"),
+      Sucursal: "Sucursal DD",
       Cantidad: 10,
     },
   },
@@ -98,7 +98,7 @@ db.automovil.insertMany([
     Tipo: "Sedán",
     Capacidad: 5,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d5a"),
+      Sucursal: "Sucursal X",
       Cantidad: 8,
     },
   },
@@ -110,7 +110,7 @@ db.automovil.insertMany([
     Tipo: "SUV",
     Capacidad: 5,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d5e"),
+      Sucursal: "Sucursal BB",
       Cantidad: 9,
     },
   },
@@ -121,7 +121,7 @@ db.automovil.insertMany([
     Tipo: "Sedán",
     Capacidad: 5,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d5e"),
+      Sucursal: "Sucursal BB",
       Cantidad: 12,
     },
   },
@@ -132,7 +132,7 @@ db.automovil.insertMany([
     Tipo: "Sedán",
     Capacidad: 5,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d5e"),
+      Sucursal: "Sucursal BB",
       Cantidad: 6,
     },
   },
@@ -144,7 +144,7 @@ db.automovil.insertMany([
     Tipo: "SUV",
     Capacidad: 5,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d5d"),
+      Sucursal: "Sucursal AA",
       Cantidad: 9,
     },
   },
@@ -156,7 +156,7 @@ db.automovil.insertMany([
     Tipo: "SUV",
     Capacidad: 5,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d57"),
+      Sucursal: "Sucursal U",
       Cantidad: 11,
     },
   },
@@ -167,7 +167,7 @@ db.automovil.insertMany([
     Tipo: "SUV",
     Capacidad: 5,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d57"),
+      Sucursal: "Sucursal U",
       Cantidad: 7,
     },
   },
@@ -178,7 +178,7 @@ db.automovil.insertMany([
     Tipo: "Camioneta",
     Capacidad: 5,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d57"),
+      Sucursal: "Sucursal U",
       Cantidad: 10,
     },
   },
@@ -190,7 +190,7 @@ db.automovil.insertMany([
     Tipo: "Camioneta",
     Capacidad: 5,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d5c"),
+      Sucursal: "Sucursal Z",
       Cantidad: 8,
     },
   },
@@ -202,7 +202,7 @@ db.automovil.insertMany([
     Tipo: "Deportivo",
     Capacidad: 2,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d59"),
+      Sucursal: "Sucursal W",
       Cantidad: 2,
     },
   },
@@ -213,7 +213,7 @@ db.automovil.insertMany([
     Tipo: "Deportivo",
     Capacidad: 2,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d59"),
+      Sucursal: "Sucursal W",
       Cantidad: 3,
     },
   },
@@ -224,8 +224,28 @@ db.automovil.insertMany([
     Tipo: "Deportivo",
     Capacidad: 2,
     Stock: {
-      Sucursal: ObjectId("650aeea339e2b4119b1c2d59"),
+      Sucursal: "Sucursal W",
       Cantidad: 20,
+    },
+  },
+]);
+
+/* 7. Mostrar la cantidad total de automóviles disponibles en cada sucursal.*/
+db.automovil.aggregate([
+  {
+    $unwind: "$Stock",
+  },
+  {
+    $group: {
+      _id: "$Stock.Sucursal",
+      CantidadTotal: { $sum: "$Stock.Cantidad" },
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+      Sucursal: "$_id",
+      CantidadTotal: 1,
     },
   },
 ]);
@@ -235,6 +255,35 @@ db.automovil.find({ Capacidad: { $gt: 5 } });
 
 // 15. Listar todos los automóviles ordenados por marca y modelo.
 db.automovil.find().sort({ Marca: 1, Modelo: 1 });
+
+/* 16. Mostrar la cantidad total de automóviles en cada sucursal junto con su dirección.*/
+db.automovil.aggregate([
+  {
+    $group: {
+      _id: "$Stock.Sucursal",
+      CantidadTotal: { $sum: "$Stock.Cantidad" },
+    },
+  },
+  {
+    $lookup: {
+      from: "sucursal",
+      localField: "_id",
+      foreignField: "Nombre",
+      as: "Sucursal",
+    },
+  },
+  {
+    $unwind: "$Sucursal",
+  },
+  {
+    $project: {
+      _id: 0,
+      Sucursal: "$_id",
+      CantidadTotal: 1,
+      Direccion: "$Sucursal.Direccion",
+    },
+  },
+]);
 
 // 18. Mostrar los automóviles con capacidad igual a 5 personas y que estén disponibles.
 db.automovil.find({

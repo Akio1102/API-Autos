@@ -72,6 +72,15 @@ export const GetAllIdReservasPendientes = async (req, res) => {
   }
 };
 
+export const GetAllClientesAlquiler = async (req, res) => {
+  try {
+    const allReservas = await ServiciosService.getAllClientesAlquiler();
+    sendSuccessResponse(res, allReservas);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};
+
 export const GetAllAlquileres = async (req, res) => {
   try {
     const allReservas = await ServiciosService.getAllAlquileres();

@@ -4,6 +4,15 @@ import {
   sendErrorResponse,
 } from "../Helpers/SendResponse.js";
 
+export const GetAllAutomovilesSucursal = async (req, res) => {
+  try {
+    const allAutomoviles = await AutomovilService.getAllAutomovilesSucursal();
+    sendSuccessResponse(res, allAutomoviles);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};
+
 export const GetAllAutomovil5 = async (req, res) => {
   try {
     const allAutomovil5 = await AutomovilService.getAllAutomovil5();
@@ -16,6 +25,16 @@ export const GetAllAutomovil5 = async (req, res) => {
 export const GetAllAutomovil = async (req, res) => {
   try {
     const allAutomovil = await AutomovilService.getAllAutomovil();
+    sendSuccessResponse(res, allAutomovil);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};
+
+export const GetAllCantidadAutomovilesSucursal = async (req, res) => {
+  try {
+    const allAutomovil =
+      await AutomovilService.getAllCantidadAutomovilesSucursal();
     sendSuccessResponse(res, allAutomovil);
   } catch (error) {
     sendErrorResponse(res, error);

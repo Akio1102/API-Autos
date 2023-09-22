@@ -222,6 +222,48 @@ export const getAllIdReservasPendientes = async (id) => {
   }
 };
 
+export const getAllClientesAlquiler = async () => {
+  try {
+    const Servicio = await ConectDB("servicio");
+
+    const AllAlquileres = await Servicio.aggregate([
+      { $match: { Tipo_Servicio: "Alquiler" } },
+      {
+        $lookup: {
+          from: "persona",
+          localField: "IdCliente",
+          foreignField: "_id",
+          as: "Cliente",
+        },
+      },
+      {
+        $project: {
+          IdAutomovil: 0,
+          IdCliente: 0,
+          _id: 0,
+          "Cliente._id": 0,
+          "Cliente.Direccion": 0,
+          "Cliente.Email": 0,
+          "Cliente.Password": 0,
+          "Cliente.Distintivo": 0,
+        },
+      },
+    ]).toArray();
+
+    return AllAlquileres.length > 0
+      ? {
+          msg: "Clientes que realizaron al menos un Alquiler Encontrados",
+          data: AllAlquileres,
+        }
+      : {
+          msg: `No hay Clientes que realizaron un Alquiler`,
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
 export const getAllAlquileres = async () => {
   try {
     const Servicio = await ConectDB("servicio");

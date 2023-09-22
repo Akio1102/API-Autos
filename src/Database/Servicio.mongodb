@@ -1,7 +1,7 @@
 db.servicio.insertMany([
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b85343"),
-    IdAutomovil: ObjectId("650bb4408501100a30f86277"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c24"),
+    IdAutomovil: ObjectId("650d859b432f4e948541bffc"),
     Tipo_Servicio: "Alquiler",
     Fecha_Inicio: new Date("2023-10-07"),
     Fecha_Final: new Date("2023-10-08"),
@@ -9,8 +9,8 @@ db.servicio.insertMany([
     Pago_Total: 300,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b85344"),
-    IdAutomovil: ObjectId("650bb4408501100a30f86278"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c25"),
+    IdAutomovil: ObjectId("650d859b432f4e948541bffd"),
     Tipo_Servicio: "Alquiler",
     Fecha_Inicio: new Date("2023-09-05"),
     Fecha_Final: new Date("2023-09-07"),
@@ -18,8 +18,8 @@ db.servicio.insertMany([
     Pago_Total: 500,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b85343"),
-    IdAutomovil: ObjectId("650bb4408501100a30f86277"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c24"),
+    IdAutomovil: ObjectId("650d859b432f4e948541bffc"),
     Tipo_Servicio: "Reserva",
     Fecha_Inicio: new Date("2023-09-02"),
     Fecha_Final: new Date("2023-09-03"),
@@ -27,8 +27,8 @@ db.servicio.insertMany([
     Pago_Total: 100,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b85344"),
-    IdAutomovil: ObjectId("650bb4408501100a30f86278"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c25"),
+    IdAutomovil: ObjectId("650d859b432f4e948541bffd"),
     Tipo_Servicio: "Reserva",
     Fecha_Inicio: new Date("2023-09-10"),
     Fecha_Final: new Date("2023-09-10"),
@@ -36,8 +36,8 @@ db.servicio.insertMany([
     Pago_Total: 50,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b85344"),
-    IdAutomovil: ObjectId("650bb4408501100a30f8627c"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c25"),
+    IdAutomovil: ObjectId("650d859b432f4e948541bffe"),
     Tipo_Servicio: "Alquiler",
     Fecha_Inicio: new Date("2023-09-07"),
     Fecha_Final: new Date("2023-09-09"),
@@ -45,8 +45,8 @@ db.servicio.insertMany([
     Pago_Total: 700,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b85346"),
-    IdAutomovil: ObjectId("650bb4408501100a30f86279"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c26"),
+    IdAutomovil: ObjectId("650d859b432f4e948541bfff"),
     Tipo_Servicio: "Reserva",
     Fecha_Inicio: new Date("2023-09-15"),
     Fecha_Final: new Date("2023-09-16"),
@@ -54,8 +54,8 @@ db.servicio.insertMany([
     Pago_Total: 250,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b8534a"),
-    IdAutomovil: ObjectId("650bb4408501100a30f86278"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c27"),
+    IdAutomovil: ObjectId("650d859b432f4e948541c000"),
     Tipo_Servicio: "Reserva",
     Fecha_Inicio: new Date("2023-09-11"),
     Fecha_Final: new Date("2023-09-11"),
@@ -63,8 +63,8 @@ db.servicio.insertMany([
     Pago_Total: 80,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b85346"),
-    IdAutomovil: ObjectId("650bb4408501100a30f86279"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c26"),
+    IdAutomovil: ObjectId("650d859b432f4e948541bfff"),
     Tipo_Servicio: "Alquiler",
     Fecha_Inicio: new Date("2023-07-06"),
     Fecha_Final: new Date("2023-07-08"),
@@ -72,8 +72,8 @@ db.servicio.insertMany([
     Pago_Total: 600,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b8534a"),
-    IdAutomovil: ObjectId("650bb4408501100a30f8627a"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c27"),
+    IdAutomovil: ObjectId("650d859b432f4e948541c001"),
     Tipo_Servicio: "Reserva",
     Fecha_Inicio: new Date("2023-09-25"),
     Fecha_Final: new Date("2023-09-25"),
@@ -81,8 +81,8 @@ db.servicio.insertMany([
     Pago_Total: 45,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b85345"),
-    IdAutomovil: ObjectId("650bb4408501100a30f8627c"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c28"),
+    IdAutomovil: ObjectId("650d859b432f4e948541bffe"),
     Tipo_Servicio: "Reserva",
     Fecha_Inicio: new Date("2023-09-12"),
     Fecha_Final: new Date("2023-09-13"),
@@ -90,8 +90,8 @@ db.servicio.insertMany([
     Pago_Total: 280,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b85345"),
-    IdAutomovil: ObjectId("650bb4408501100a30f8627b"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c28"),
+    IdAutomovil: ObjectId("650d859b432f4e948541c002"),
     Tipo_Servicio: "Alquiler",
     Fecha_Inicio: new Date("2023-07-05"),
     Fecha_Final: new Date("2023-07-06"),
@@ -99,8 +99,8 @@ db.servicio.insertMany([
     Pago_Total: 750,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b85347"),
-    IdAutomovil: ObjectId("650bb4408501100a30f8627d"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c29"),
+    IdAutomovil: ObjectId("650d859b432f4e948541c003"),
     Tipo_Servicio: "Reserva",
     Fecha_Inicio: new Date("2023-09-10"),
     Fecha_Final: new Date("2023-09-11"),
@@ -108,8 +108,8 @@ db.servicio.insertMany([
     Pago_Total: 90,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b8534b"),
-    IdAutomovil: ObjectId("650bb4408501100a30f8627f"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c2a"),
+    IdAutomovil: ObjectId("650d859b432f4e948541c004"),
     Tipo_Servicio: "Reserva",
     Fecha_Inicio: new Date("2023-07-10"),
     Fecha_Final: new Date("2023-07-11"),
@@ -117,8 +117,8 @@ db.servicio.insertMany([
     Pago_Total: 55,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b85347"),
-    IdAutomovil: ObjectId("650bb4408501100a30f8627b"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c29"),
+    IdAutomovil: ObjectId("650d859b432f4e948541c002"),
     Tipo_Servicio: "Alquiler",
     Fecha_Inicio: new Date("2023-09-04"),
     Fecha_Final: new Date("2023-09-06"),
@@ -126,8 +126,8 @@ db.servicio.insertMany([
     Pago_Total: 320,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b8534b"),
-    IdAutomovil: ObjectId("650bb4408501100a30f86280"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c2a"),
+    IdAutomovil: ObjectId("650d859b432f4e948541c005"),
     Tipo_Servicio: "Alquiler",
     Fecha_Inicio: new Date("2023-09-09"),
     Fecha_Final: new Date("2023-09-11"),
@@ -135,8 +135,8 @@ db.servicio.insertMany([
     Pago_Total: 600,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b85348"),
-    IdAutomovil: ObjectId("650bb4408501100a30f86288"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c2b"),
+    IdAutomovil: ObjectId("650d859b432f4e948541c006"),
     Tipo_Servicio: "Reserva",
     Fecha_Inicio: new Date("2023-09-03"),
     Fecha_Final: new Date("2023-09-04"),
@@ -144,8 +144,8 @@ db.servicio.insertMany([
     Pago_Total: 110,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b85348"),
-    IdAutomovil: ObjectId("650bb4408501100a30f86289"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c2b"),
+    IdAutomovil: ObjectId("650d859b432f4e948541c007"),
     Tipo_Servicio: "Reserva",
     Fecha_Inicio: new Date("2023-09-14"),
     Fecha_Final: new Date("2023-09-14"),
@@ -153,8 +153,8 @@ db.servicio.insertMany([
     Pago_Total: 40,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b85349"),
-    IdAutomovil: ObjectId("650bb4dd86943780adbfeb98"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c2c"),
+    IdAutomovil: ObjectId("650d859b432f4e948541c00d"),
     Tipo_Servicio: "Alquiler",
     Fecha_Inicio: new Date("2023-09-19"),
     Fecha_Final: new Date("2023-09-20"),
@@ -162,8 +162,8 @@ db.servicio.insertMany([
     Pago_Total: 280,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b8534c"),
-    IdAutomovil: ObjectId("650bb4408501100a30f86281"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c2d"),
+    IdAutomovil: ObjectId("650d859b432f4e948541c009"),
     Tipo_Servicio: "Alquiler",
     Fecha_Inicio: new Date("2023-09-23"),
     Fecha_Final: new Date("2023-09-25"),
@@ -171,8 +171,8 @@ db.servicio.insertMany([
     Pago_Total: 750,
   },
   {
-    IdCliente: ObjectId("650aeea97d72ebc7b8b8534c"),
-    IdAutomovil: ObjectId("650bb4408501100a30f86282"),
+    IdCliente: ObjectId("650cd44c1f251b813f556c2d"),
+    IdAutomovil: ObjectId("650d859b432f4e948541c00e"),
     Tipo_Servicio: "Reserva",
     Fecha_Inicio: new Date("2023-09-27"),
     Fecha_Final: new Date("2023-09-27"),
@@ -217,7 +217,7 @@ db.servicio.aggregate([
 
 /* 5. Obtener los detalles del alquiler con el ID de alquiler específico.*/
 db.servicio.find({
-  _id: ObjectId("650c82097d4d49dbe26d6387"),
+  _id: ObjectId("650d8754beb180c52ebc2596"),
   Tipo_Servicio: "Alquiler",
 });
 
@@ -263,7 +263,7 @@ db.servicio.aggregate([
 
 /* 8. Obtener el costo total de un alquiler específico.*/
 db.servicio.find({
-  _id: ObjectId("650c82097d4d49dbe26d6387"),
+  _id: ObjectId("650d8754beb180c52ebc2596"),
   Tipo_Servicio: "Alquiler",
 });
 
@@ -273,13 +273,37 @@ db.servicio.find({
   Fecha_Inicio: new Date("2023-07-05"),
 });
 
-db.servicio.find();
 /* 12. Listar las reservas pendientes realizadas por un cliente específico.*/
 db.servicio.find({
-  IdCliente: ObjectId("650aeea97d72ebc7b8b85346"),
+  IdCliente: ObjectId("650cd44c1f251b813f556c26"),
   Tipo_Servicio: "Reserva",
   Estado: "Pendiente",
 });
+
+/* 14. Obtener los datos de los clientes que realizaron al menos un alquiler.*/
+db.servicio.aggregate([
+  { $match: { Tipo_Servicio: "Alquiler" } },
+  {
+    $lookup: {
+      from: "persona",
+      localField: "IdCliente",
+      foreignField: "_id",
+      as: "Cliente",
+    },
+  },
+  {
+    $project: {
+      IdAutomovil: 0,
+      IdCliente: 0,
+      _id: 0,
+      "Cliente._id": 0,
+      "Cliente.Direccion": 0,
+      "Cliente.Email": 0,
+      "Cliente.Password": 0,
+      "Cliente.Distintivo": 0,
+    },
+  },
+]);
 
 // 17. Obtener la cantidad total de alquileres registrados en la base de datos.
 db.servicio.find({ Tipo_Servicio: "Alquiler" }).count();
