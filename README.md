@@ -22,5 +22,5 @@ API de Alquiles y Reserva de Autos
 16. Mostrar la cantidad total de automóviles en cada sucursal junto con su dirección.
 17. Obtener la cantidad total de alquileres registrados en la base de datos. ✅
 18. Mostrar los automóviles con capacidad igual a 5 personas y que estén disponibles. ✅
-19. Login de usuario mediante JWT.
+19. Login de usuario mediante JWT. ✅
 20. Listar los alquileres con fecha de inicio entre '2023-07-05' y '2023-07-10'. ✅

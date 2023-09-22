@@ -1,4 +1,5 @@
 import ConectDB from "../Database/connection.js";
+import { createToken } from "../Helpers/Token.js";
 
 export const getAllClientes = async () => {
   try {
@@ -94,5 +95,32 @@ export const getAllGerenteAsistente = async () => {
         };
   } catch (error) {
     throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const login = async (user) => {
+  const { Email, Password } = user;
+  try {
+    const Cliente = await ConectDB("persona");
+    const User = await Cliente.find({
+      Email,
+      Password,
+    }).toArray();
+
+    if (User) {
+      const token = await createToken(User[0]._id);
+      return {
+        msg: "Login Exitoso",
+        data: User,
+        token,
+      };
+    } else {
+      return {
+        msg: "Usuario no encontrado",
+        status: 404,
+      };
+    }
+  } catch (error) {
+    throw new Error(`Error al iniciar sesión: ${error.message}`);
   }
 };

@@ -40,3 +40,13 @@ export const GetAllGerenteAsistente = async (req, res) => {
     sendErrorResponse(res, error);
   }
 };
+
+export const Login = async (req, res) => {
+  try {
+    const userData = req.body;
+    const user = await PersonasService.login(userData);
+    sendSuccessResponse(res, user);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};

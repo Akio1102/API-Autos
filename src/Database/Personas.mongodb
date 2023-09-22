@@ -119,3 +119,6 @@ db.persona.find(
   { Distintivo: { $in: ["gerente", "asistente"] } },
   { _id: 0, Email: 0, Password: 0 }
 );
+
+// 19. Login de usuario mediante JWT.
+db.persona.find({ Email: "andres@example.com", Password: "mipassword123" });
