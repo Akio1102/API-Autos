@@ -45,6 +45,7 @@ export const Login = async (req, res) => {
   try {
     const userData = req.body;
     const user = await PersonasService.login(userData);
+    res.cookie("token", user);
     sendSuccessResponse(res, user);
   } catch (error) {
     sendErrorResponse(res, error);
@@ -83,6 +84,46 @@ export const CreateOnePersona = async (req, res) => {
     };
 
     const user = await PersonasService.createOnePersona(userData);
+    sendSuccessResponse(res, user);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};
+
+export const UpdateOnePersona = async (req, res) => {
+  try {
+    const {
+      Id,
+      Nombre,
+      DNI,
+      Direccion,
+      Telefono,
+      Email,
+      Password,
+      Distintivo = "cliente",
+    } = req.body;
+
+    const userData = {
+      Nombre,
+      DNI,
+      Direccion,
+      Telefono,
+      Email,
+      Password,
+      Distintivo,
+    };
+
+    const user = await PersonasService.updatedOnePersona(Id, userData);
+    sendSuccessResponse(res, user);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};
+
+export const DeleteOnePersona = async (req, res) => {
+  try {
+    const { Id } = req.body;
+    const user = await PersonasService.deletedOnePersona(Id);
     sendSuccessResponse(res, user);
   } catch (error) {
     sendErrorResponse(res, error);

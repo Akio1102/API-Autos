@@ -3,10 +3,14 @@ import * as ServiciosController from "../Controllers/Servicios.js";
 
 const ROUTER = Router();
 
-export default ROUTER.get(
-  "/Alquileres-Disponibles",
-  ServiciosController.GetAllAlquileresDisponibles
-)
+export default ROUTER.get("/", ServiciosController.GetAllServicios)
+  .post("/New", ServiciosController.CreateOneServicio)
+  .put("/Update", ServiciosController.UpdateOneServicio)
+  .delete("/Delete", ServiciosController.DeleteOneServicio)
+  .get(
+    "/Alquileres-Disponibles",
+    ServiciosController.GetAllAlquileresDisponibles
+  )
   .get("/Alquileres-Activos", ServiciosController.GetAllAlquileresActivos)
   .get("/Alquiler/:id", ServiciosController.GetOneIdAlquiler)
   .get("/Reservas-Pendientes", ServiciosController.GetAllReservasPendientes)

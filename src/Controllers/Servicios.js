@@ -92,8 +92,68 @@ export const GetAllAlquileres = async (req, res) => {
 
 export const GetAllAlquilerFechas = async (req, res) => {
   try {
-    console.log(req.params);
     const allAlquiler = await ServiciosService.getAllAlquilerFechas();
+    sendSuccessResponse(res, allAlquiler);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};
+
+export const GetAllServicios = async (req, res) => {
+  try {
+    const allServicios = await ServiciosService.getAllServicios();
+    sendSuccessResponse(res, allServicios);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};
+
+export const CreateOneServicio = async (req, res) => {
+  try {
+    const newServicio = await ServiciosService.createOneServicio(req.body);
+    sendSuccessResponse(res, newServicio);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};
+
+export const UpdateOneServicio = async (req, res) => {
+  try {
+    const {
+      Id,
+      IdCliente,
+      IdAutomovil,
+      Tipo_Servicio,
+      Fecha_Inicio,
+      Fecha_Final,
+      Estado,
+      Pago_Total,
+    } = req.body;
+
+    const servicioData = {
+      IdCliente,
+      IdAutomovil,
+      Tipo_Servicio,
+      Fecha_Inicio,
+      Fecha_Final,
+      Estado,
+      Pago_Total,
+    };
+
+    const updateServicio = await ServiciosService.updatedOneServicio(
+      Id,
+      servicioData
+    );
+    sendSuccessResponse(res, updateServicio);
+  } catch (error) {
+    sendErrorResponse(res, error);
+  }
+};
+
+export const DeleteOneServicio = async (req, res) => {
+  try {
+    const { Id } = req.body;
+    const allAlquiler = await ServiciosService.deleteOneServicio(Id);
     sendSuccessResponse(res, allAlquiler);
   } catch (error) {
     sendErrorResponse(res, error);

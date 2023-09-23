@@ -126,6 +126,10 @@ db.persona.find({ Email: "andres@example.com", Password: "mipassword123" });
 db.persona.insertOne({ test: "hi" });
 
 db.persona.updateOne(
-  { _id: ObjectId("650ddcac9ad06328a3324dfc") },
+  { _id: ObjectId("650e2ff485ab49db3e285b9a") },
   { $set: { test: "Pruebaa" } }
 );
+
+db.persona.deleteOne({
+  _id: ObjectId("650e2ff485ab49db3e285b9a650e2ff485ab49db3e285b9a"),
+});

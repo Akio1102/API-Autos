@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb";
 import ConectDB from "../Database/connection.js";
 import { encryptPassword, comparePasswords } from "../Helpers/Hash.js";
 import { createToken } from "../Helpers/Token.js";
@@ -103,28 +104,62 @@ export const login = async (user) => {
   const { Email, Password } = user;
   try {
     const Cliente = await ConectDB("persona");
-    const User = await Cliente.find({
-      Email,
-      Password,
-    }).toArray();
+    const User = await Cliente.findOne({ Email });
 
-    if (User) {
-      const token = await createToken(User[0]._id);
-      return {
-        msg: "Login Exitoso",
-        data: User,
-        token,
-      };
-    } else {
+    if (!User) {
       return {
         msg: "Usuario no encontrado",
         status: 404,
       };
     }
+
+    const isPasswordValid = comparePasswords(Password, User.Password);
+
+    if (!isPasswordValid) {
+      throw new Error("Contraseña incorrecta");
+    }
+
+    const token = await createToken(User._id);
+
+    return {
+      msg: "Login Exitoso",
+      data: User,
+      token,
+    };
   } catch (error) {
     throw new Error(`Error al iniciar sesión: ${error.message}`);
   }
 };
+
+// export const login = async (user) => {
+//   const { Email, Password } = user;
+//   try {
+//     const Cliente = await ConectDB("persona");
+//     const User = await Cliente.find({ Email }).toArray();
+
+//     if (User) {
+//       const isPasswordValid = comparePasswords(Password, User.Password);
+
+//       if (!isPasswordValid) {
+//         throw new Error("Password incorrecta");
+//       }
+
+//       const token = await createToken(User[0]._id);
+//       return {
+//         msg: "Login Exitoso",
+//         data: User,
+//         token,
+//       };
+//     } else {
+//       return {
+//         msg: "Usuario no encontrado",
+//         status: 404,
+//       };
+//     }
+//   } catch (error) {
+//     throw new Error(`Error al iniciar sesión: ${error.message}`);
+//   }
+// };
 
 export const getAllPersonas = async () => {
   try {
@@ -178,32 +213,51 @@ export const createOnePersona = async (Person) => {
   }
 };
 
-export const updatedOnePersona = async (Person) => {
+export const updatedOnePersona = async (id, Person) => {
   try {
-    const { Email, Password } = Person;
+    const { Password } = Person;
 
     const Personas = await ConectDB("persona");
 
-    const existingUser = await Personas.updateOne({
-      Email,
-      Password,
-    }).toArray();
-    if (existingUser) {
+    const existingUser = await Personas.find({ Email, Password }).toArray();
+
+    if (!existingUser) {
       return {
-        msg: "Persona ya Existe",
-        status: 409,
+        msg: "Persona no Existe",
+        status: 404,
       };
     }
 
     const hashedPassword = encryptPassword(Password);
     Person.Password = hashedPassword;
 
-    const UpdatePersona = await Personas.insertOne({ Person });
+    const UpdatePersona = await Personas.updateOne(
+      { _id: new ObjectId(id) },
+      { $set: Person }
+    );
 
     return UpdatePersona.acknowledged
       ? {
           msg: "Personas Actualizada Exitosamente",
-          data: UpdatePersona,
+        }
+      : {
+          msg: "No existe esa Persona",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const deletedOnePersona = async (id) => {
+  try {
+    const Personas = await ConectDB("persona");
+
+    const UpdatePersona = await Personas.deleteOne({ _id: new ObjectId(id) });
+
+    return UpdatePersona.acknowledged
+      ? {
+          msg: "Personas Eliminada Exitosamente",
         }
       : {
           msg: "No existe esa Persona",

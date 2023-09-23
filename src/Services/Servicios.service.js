@@ -312,3 +312,84 @@ export const getAllAlquilerFechas = async (date = "2023-07-05") => {
     throw new Error(`Error en el Servidor: ${error.message}`);
   }
 };
+
+export const getAllServicios = async () => {
+  try {
+    const Servicio = await ConectDB("servicio");
+
+    const Servicios = await Servicio.find().toArray();
+
+    return Servicios.length > 0
+      ? {
+          msg: "Se encontraron todos los Servicios",
+          data: Servicios,
+        }
+      : {
+          msg: "No hay Servicios registrados en la Base de Datos",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const createOneServicio = async (servicio) => {
+  try {
+    const Servicio = await ConectDB("servicio");
+
+    const NewServicio = await Servicio.insertOne(servicio);
+
+    return NewServicio.acknowledged
+      ? {
+          msg: "Se creo Exitosamente el Servicio",
+          data: NewServicio,
+        }
+      : {
+          msg: "Faltan Datos",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const updatedOneServicio = async (id, servicioData) => {
+  try {
+    const Servicio = await ConectDB("servicio");
+
+    const servicio = await Servicio.updateOne(
+      { _id: new ObjectId(id) },
+      { $set: servicioData }
+    );
+
+    return servicio.acknowledged
+      ? {
+          msg: "Servicio Actualizado Exitosamente",
+        }
+      : {
+          msg: "No existe ese Servicio",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
+
+export const deleteOneServicio = async (id) => {
+  try {
+    const Servicio = await ConectDB("servicio");
+
+    const servicio = await Servicio.deleteOne({ _id: new ObjectId(id) });
+
+    return servicio.acknowledged
+      ? {
+          msg: "Servicio Eliminado Exitosamente",
+        }
+      : {
+          msg: "No existe ese Servicio",
+          status: 404,
+        };
+  } catch (error) {
+    throw new Error(`Error en el Servidor: ${error.message}`);
+  }
+};
